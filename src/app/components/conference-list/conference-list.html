@@ -1,0 +1,50 @@
+<section class="card list-card" id="conference-list">
+  <div class="section-title">
+    <div class="icon">📅</div>
+    <div>
+      <h2>Liste des conférences à venir</h2>
+      <p>Cliquez sur une conférence pour afficher ses détails.</p>
+    </div>
+  </div>
+      <div class="conference-grid">
+      @for (conference of conferences(); track conference.id) {
+        @if (conference.date >= today) {
+        <article
+          class="conference-item"
+          (click)="choisirConference(conference)"
+        >
+          <!-- Pipe uppercase -->
+          <h3>{{ conference.title | uppercase }}</h3>
+
+          <p>{{ conference.description }}</p>
+
+          <!-- Pipe date -->
+          <p><strong>Date :</strong> {{ conference.date | date:'dd/MM/yyyy' }}</p>
+          <p><strong>Lieu :</strong> {{ conference.place }}</p>
+          <p>
+            <strong>Places restantes :</strong>
+       <!---     {{ placesRestantes(conference) }}   --->
+          </p>
+
+          <!-- Directive ngClass -->
+          <button
+          [ngClass]="couleurBouton(conference)"
+          (click)="reserve(conference)"
+            type="button"
+            class="inscription-btn">
+            S'inscrire
+          </button>
+          <button [routerLink]="['/details', conference.id]" type="button" class="details-btn">
+            Détails
+          </button>
+
+           <!---    ---->
+          <!---  [disabled]="placesRestantes(conference) === 0"---->
+        </article>
+   } 
+      }
+    </div>
+
+  <app-conference-details [conference]="conferenceSelectionnee"
+  ></app-conference-details>
+ </section>

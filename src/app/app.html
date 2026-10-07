@@ -1,0 +1,21 @@
+<!-- PROSIT 1 : page découpée en composants indépendants -->
+<app-header></app-header>
+<app-navbar></app-navbar>
+
+<main class="container">
+  <app-user-profile></app-user-profile>
+  
+  <router-outlet></router-outlet>
+
+  <!--
+    PROSIT 2 : data-binding + Signals dans ConferenceDetail
+    PROSIT 3 : liste + @if + @for + ngClass + pipes dans ConferenceList
+    PROSIT 4 : ConferenceList transmet la conférence sélectionnée à ConferenceDetail
+  -->
+ <!--- <app-conference-list></app-conference-list>  --->
+
+  <app-friends-list></app-friends-list>
+  <app-notifications></app-notifications>
+</main>
+
+<app-footer></app-footer>
