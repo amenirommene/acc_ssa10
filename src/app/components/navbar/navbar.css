@@ -18,3 +18,9 @@
 .navbar a:hover {
   background: #eaf2fb;
 }
+
+.active {
+      color: white;
+      background-color: #2563eb;
+      font-weight: 500;
+    }
