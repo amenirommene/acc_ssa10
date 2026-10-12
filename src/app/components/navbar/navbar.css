@@ -19,7 +19,7 @@
   background: #eaf2fb;
 }
 
-.active {
+a.active {
       color: white;
       background-color: #2563eb;
       font-weight: 500;

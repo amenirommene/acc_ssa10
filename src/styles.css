@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-.active {
+a.active {
       color: white;
       background-color: #2563eb;
       font-weight: 500;
