@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-details',
@@ -6,4 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './details.html',
   styleUrl: './details.css',
 })
-export class Details {}
+export class Details {
+  //name: variable classique
+  name:string = 'details works!';
+  //id est un signal
+  id=input();
+}
