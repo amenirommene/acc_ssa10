@@ -4,4 +4,5 @@ export const ADMIN_ROUTES: Routes = [
     {path:"", loadComponent:()=>import('./dashboard/dashboard').then(m=>m.Dashboard)},
     {path:"users", loadComponent:()=>import('./users/users').then(m=>m.Users)},
     {path:"speakers", loadComponent:()=>import('./speakers/speakers').then(m=>m.Speakers)},
+    {path:"addConference", loadComponent:()=>import('../componentsForms/conference-form/conference-form').then(m=>m.ConferenceForm)},
 ]
