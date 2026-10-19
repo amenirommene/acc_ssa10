@@ -7,7 +7,7 @@
 }
  @if(myForm.get('title')?.errors?.['minlength'] && myForm.get('title')?.touched){
     <div>
-        Minimum 3 caractères
+        Minimum {{ myForm.get('title')?.errors?.['minlength']?.['requireLength'] }} caractères
     </div>
 }
     Description : <input formControlName="description">
@@ -19,4 +19,7 @@
     Lieu : <input formControlName="place">
     Nombre maximale de participants : <input formControlName="nbmax">
     date : <input formControlName="date">
+    <button [disabled]="myForm.invalid">Ajouter</button>
+    <button [disabled]="isValid() == 'INVALID'">Ajouter</button>
 </form>
+{{ isValid() }}
