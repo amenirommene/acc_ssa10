@@ -1,4 +1,4 @@
-<form [formGroup]="myForm">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
     Title : <input formControlName="title" >
     @if(myForm.get('title')?.errors?.['required'] && myForm.get('title')?.touched){
     <div>
@@ -18,8 +18,8 @@
 }
     Lieu : <input formControlName="place">
     Nombre maximale de participants : <input formControlName="nbmax">
-    date : <input formControlName="date">
-    <button [disabled]="myForm.invalid">Ajouter</button>
-    <button [disabled]="isValid() == 'INVALID'">Ajouter</button>
+    date : <input formControlName="date" type="date">
+    <button type="submit" [disabled]="myForm.invalid">Ajouter</button>
+    <button type="submit" [disabled]="isValid() == 'INVALID'">Ajouter</button>
 </form>
 {{ isValid() }}

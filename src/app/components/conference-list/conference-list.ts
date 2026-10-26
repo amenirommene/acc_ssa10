@@ -4,6 +4,7 @@ import { CommonModule, DatePipe, UpperCasePipe } from '@angular/common';
 import { ConferenceDetails } from '../conf-details/conference-details';
 import { ConferenceService } from '../../services/conference-service';
 import { RouterLink } from '@angular/router';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 
 @Component({
@@ -33,6 +34,8 @@ export class ConferenceList {
  
 
 confs=inject(ConferenceService);
-conferences = signal<Conference[]>(this.confs.getAllConferences());
+//conferences = signal<Conference[]>(this.confs.getAllConferences());
+conferences = toSignal(this.confs.getAllConferences(),{initialValue:[]});
+
 
 }
